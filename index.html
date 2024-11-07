@@ -4,72 +4,255 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spotify</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="icon" href="favicon.ico.png" type="image/x-icon">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            line-height: 1.6;
+            padding: 0 2rem;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Arial', sans-serif;
+            color: #1DB954;
+            text-align: center;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1DB954;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logo h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .logo img {
+            width: 120px;
+            height: auto;
+            margin-top: 1rem;
+        }
+
+        hr {
+            border: 0.5px solid #333;
+            margin: 20px 0;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+            padding: 1rem 0;
+        }
+
+        nav ul li {
+            font-size: 1.2rem;
+        }
+
+        /* Main Content */
+        .playlist {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .playlist img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .playlist ol {
+            list-style: none;
+            padding: 0;
+        }
+
+        .playlist h3 {
+            font-size: 1.4rem;
+            margin: 10px 0;
+        }
+
+        .playlist button {
+            padding: 10px 20px;
+            background-color: #1DB954;
+            border: none;
+            color: white;
+            font-size: 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .playlist button:hover {
+            background-color: #1ed760;
+        }
+
+        .explore-section, .top-charts {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .explore-item, .chart-item {
+            background-color: #181818;
+            padding: 15px;
+            border-radius: 8px;
+            width: 48%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .explore-item img, .chart-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #181818;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #1DB954;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width: 768px) {
+            .explore-item, .chart-item {
+                width: 100%;
+            }
+
+            .playlist {
+                margin: 10px 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <div class="logo"><h1>Spotify</h1></div>
-        <img src="spotify-music.gif" alt="spotify-music">
-
-
+        <img src="spotify-music.gif" alt="Spotify Music Logo">
         <hr>
+        <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#library">Your Library</a></li>
                 <li><a href="#premium">Premium</a></li>
                 <li><a href="#help">Help</a></li>
             </ul>
-            <hr>
+        </nav>
+        <hr>
     </header>
 
-            <h2>Featured Playlists</h2>
-            <div class="playlist">
-                <h3>Top Hits 2024</h3>
-                <ol>
-                    <li><h3>Espresso</h3></li>
-                    <img src="sabb.jpg" alt="sabb">
-                    <li><h3>Die With A Smile</h3></li>
-                    <img src="smile.jpg" alt="smile">
-                    <li><h3>Million Dollar Baby</h3></li>
-                    <img src="dollar.jpg" alt="dollar">
+    <main>
+        <h2>Featured Playlists</h2>
 
-                </ol>
-                <button>Play</button>
-                <hr>
-            </div>
-            <div class="playlist">
-                <h3>Chill Vibes</h3>
-                <ol>
-                    <li><h3>What A Beautiful Name</h3></li>
-                    <img src="name.jpg" alt="name">
-                    <li><h3>10,000 Reasons</h3></li>
-                    <img src="rea.jpg" alt="rea">
-                    <li><h3>Oceans</h3></li>
-                    <img src="oceans.jpg" alt="ocean">
-                </ol>
-                <button>Play</button>
-                <hr>
-            </div>
-            <div class="playlist">
-                <h3>Sad Songs</h3>
-                <ol>
-                    <li><h3>Dating Tayo</h3></li>
-                    <img src="us.jpg" alt="us">
-                    <li><h3>Kung Siya Man</h3></li>
-                    <img src="her.jpg" alt="her">
-                    <li><h3>Bumalik Ka Sakin</h3></li>
-                    <img src="pls.jpg" alt="pls">
-                </ol>
-                <button>Play</button>
-            </div>
-    
-            <br>
+        <div class="playlist">
+            <h3>Top Hits 2024</h3>
+            <ol>
+                <li><h4>Espresso</h4></li>
+                <img src="sabb.jpg" alt="Espresso by Sabb">
+                <li><h4>Die With A Smile</h4></li>
+                <img src="smile.jpg" alt="Die With A Smile">
+                <li><h4>Million Dollar Baby</h4></li>
+                <img src="dollar.jpg" alt="Million Dollar Baby">
+            </ol>
+            <button>Play</button>
             <hr>
+        </div>
+
+        <div class="playlist">
+            <h3>Chill Vibes</h3>
+            <ol>
+                <li><h4>What A Beautiful Name</h4></li>
+                <img src="name.jpg" alt="What A Beautiful Name">
+                <li><h4>10,000 Reasons</h4></li>
+                <img src="rea.jpg" alt="10,000 Reasons">
+                <li><h4>Oceans</h4></li>
+                <img src="oceans.jpg" alt="Oceans">
+            </ol>
+            <button>Play</button>
+            <hr>
+        </div>
+
+        <div class="playlist">
+            <h3>Sad Songs</h3>
+            <ol>
+                <li><h4>Dating Tayo</h4></li>
+                <img src="us.jpg" alt="Dating Tayo">
+                <li><h4>Kung Siya Man</h4></li>
+                <img src="her.jpg" alt="Kung Siya Man">
+                <li><h4>Bumalik Ka Sakin</h4></li>
+                <img src="pls.jpg" alt="Bumalik Ka Sakin">
+            </ol>
+            <button>Play</button>
+        </div>
+
+        <div class="explore-section">
+            <div class="explore-item">
+                <h3>New Music Releases</h3>
+                <img src="new-releases.jpg" alt="New Music Releases">
+                <p>Explore the latest hits and discover new artists.</p>
+            </div>
+            <div class="explore-item">
+                <h3>Top Artists</h3>
+                <img src="top-artists.jpg" alt="Top Artists">
+                <p>Check out the most popular artists on Spotify.</p>
+            </div>
+        </div>
+
+        <div class="top-charts">
+            <div class="chart-item">
+                <h3>Global Top 50</h3>
+                <img src="global-top50.jpg" alt="Global Top 50 Chart">
+                <p>Stay updated with the most streamed tracks worldwide.</p>
+            </div>
+            <div class="chart-item">
+                <h3>Viral 50</h3>
+                <img src="viral-50.jpg" alt="Viral 50 Chart">
+                <p>Discover tracks that are trending globally.</p>
+            </div>
+        </div>
+    </main>
+
     <footer>
         <p>&copy; 2024 Spotify Clone | <a href="library.html">Come To My Library</a></p>
     </footer>
 </body>
 </html>
+
 
